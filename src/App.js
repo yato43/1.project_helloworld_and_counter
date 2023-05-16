@@ -1,5 +1,6 @@
 import './App.scss';
 import {useEffect, useState} from "react";
+import Counter from "../src/counter.js"
 
 function App() {
     const [bgColor, setBgColor] = useState('red');
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
      <p className="hello" style={{color: bgColor}}>Hello React</p>
+        <Counter/>
     </div>
   );
 }
