@@ -3,13 +3,20 @@ button{
   height: 50px;
   border: none;
   background-color: #21f300;
+  border-radius: 5px;
+  &:hover{
+    box-shadow:  0 0 5px 5px rgba(34, 60, 80, 0.2) inset;
+  }
+
 }
 
 .change-btn{
   display: flex;
   gap: 15px;
+
 }
 
 .counter-value{
   font-size: 22px;
+  font-weight: 600;
 }
