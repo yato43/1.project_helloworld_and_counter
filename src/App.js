@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {useEffect, useState} from "react";
 
 function App() {
+    const [bgColor, setBgColor] = useState('red');
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // Генерируем случайный цвет
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            setBgColor(randomColor);
+        }, 1500);
+
+        // Очищаем интервал при размонтировании компонента
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <p className="hello" style={{color: bgColor}}>Hello React</p>
     </div>
   );
 }
